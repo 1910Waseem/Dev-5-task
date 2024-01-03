@@ -16,7 +16,7 @@ pipeline {
         NEXUS_REPOSITORY = "ncodeit-scripted"
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexus"
-	SCANNER_HOME = tool 'SonarQ'
+	SCANNER_HOME = tool 'Sonarq'
     }
     stages {
         stage("clone code") {
