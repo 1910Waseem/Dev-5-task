@@ -16,7 +16,7 @@ pipeline {
         NEXUS_REPOSITORY = "ncodeit-scripted"
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "Nexus_server"
-	SCANNER_HOME = tool 'sonar_scanner'
+	SCANNER_HOME = tool 'sonarqube_server'
     }
     stages {
         stage("clone code") {
@@ -39,7 +39,7 @@ pipeline {
 	stage('SonarCloud') {
             steps {
                 withSonarQubeEnv('sonarqube_server') {
-				sh '$SCANNER_HOME \
+				sh '$SCANNER_HOME/bin/sonar-scanner \
 				-Dsonar.projectKey=Ncodeit \
 				-Dsonar.projectName=Ncodeit \
 				-Dsonar.projectVersion=2.0 \
