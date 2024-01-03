@@ -15,7 +15,7 @@ pipeline {
         // Repository where we will upload the artifact
         NEXUS_REPOSITORY = "ncodeit-scripted"
         // Jenkins credential id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID = "Nexus_sever"
+        NEXUS_CREDENTIAL_ID = "Nexus_server"
 	SCANNER_HOME = tool 'sonar_scanner'
     }
     stages {
